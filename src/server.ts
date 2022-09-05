@@ -9,7 +9,7 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
 
   // Set the network port
   const port = process.env.PORT || 8082;
-  var endpoint = process.env.API_ENDPOINT
+  //var endpoint = process.env.API_ENDPOINT || 'http://newproject2-env.eba-zrmpwapt.us-east-1.elasticbeanstalk.com/';
   
   // Use the body parser middleware for post requests
   app.use(bodyParser.json());

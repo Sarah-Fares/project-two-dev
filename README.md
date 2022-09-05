@@ -1,5 +1,6 @@
 ##### Project Notes
 Git repository : https://github.com/Sarah-Fares/project-two-dev
+
 Endpoint : http://newproject2-env.eba-zrmpwapt.us-east-1.elasticbeanstalk.com/
 
 N.B : image which is mentioned for testing it is very big so it is not open otherwise any other image opens normally

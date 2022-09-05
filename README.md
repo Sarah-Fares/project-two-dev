@@ -1,3 +1,10 @@
+##### Project Notes
+Git repository : https://github.com/Sarah-Fares/project-two-dev
+Endpoint : http://newproject2-env.eba-zrmpwapt.us-east-1.elasticbeanstalk.com/
+
+N.B : image which is mentioned for testing it is very big so it is not open otherwise any other image opens normally
+could you please find the attachmet in the deployment_screenshots folder I uploaded a screenshot for testing by using another image
+
 # Udagram Image Filtering Microservice
 
 Udagram is a simple cloud application developed alongside the Udacity Cloud Engineering Nanodegree. It allows users to register and log into a web client, post photos to the feed, and process photos using an image filtering microservice.

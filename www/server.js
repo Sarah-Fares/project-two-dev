@@ -13,6 +13,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const body_parser_1 = __importDefault(require("body-parser"));
+const util_1 = require("./util/util");
 (() => __awaiter(this, void 0, void 0, function* () {
     // Init the Express application
     const app = express_1.default();
@@ -40,22 +41,18 @@ const body_parser_1 = __importDefault(require("body-parser"));
     app.get("/", (req, res) => __awaiter(this, void 0, void 0, function* () {
         res.send("try GET /filteredimage?image_url={{}}");
     }));
-    
-
-    app.get( "/filteredimage", async (req, res) => {     
-        let {image_url} = req.query;  
-        if (!image_url)
-         {
-          return res.status(400).send(`image_url is required`);
-         }
+    app.get("/filteredimage", (req, res) => __awaiter(this, void 0, void 0, function* () {
+        let { image_url } = req.query;
+        if (!image_url) {
+            return res.status(400)
+                .send(`image_url is required`);
+        }
         else {
-            const filteredpath = await filterImageFromURL(image_url);        
-            res.status(200).sendFile(filteredpath+'');              
-            res.on('finish', () =>{deleteLocalFiles([filteredpath]);})              
-           }
-              
-      } );
-
+            const filteredpath = yield util_1.filterImageFromURL(image_url);
+            res.status(200).sendFile(filteredpath + '');
+            res.on('finish', () => { util_1.deleteLocalFiles([filteredpath]); });
+        }
+    }));
     // Start the Server
     app.listen(port, () => {
         console.log(`server running http://localhost:${port}`);
